@@ -19,16 +19,6 @@ const handleUserRouter = (req, res) => {
       return new ErrorModel('登陆失败');
     });
   }
-
-  // 登录验证的测试
-  if (method === 'GET' && path === '/api/user/login-test') {
-    if (req.session.username) {
-      return Promise.resolve(new SuccessModel({
-        session: req.session,
-      }));
-    }
-    return Promise.resolve(new ErrorModel('尚未登陆'));
-  }
 };
 
 module.exports = handleUserRouter;

@@ -110,3 +110,36 @@ update users set realname='李四1' where username='lisi';
 * cookie中不会存放实际的用户信息，只是一个表示，通过解析后存储到server中的session
 
 * session是存在于服务端的，安全性较强，存储的大小也没有限制
+
+## 五、redis
+
+redis是内存中的数据库，十分适合存储session的原因：
+
+* session访问频繁，对性能要求极高
+
+* session可不考虑断电丢失的情况（比如登录时丢失重新登录即可）
+
+* session数据量不会太大
+
+网站数据不适合用redis：
+
+* 操作频率不是太高（相比于session操作）
+
+* 断电数据不能丢失
+
+* 数据量太大，内存成本高
+
+基本语句：
+```redis
+
+redis-cli.exe -h 127.0.0.1 -p 6379 // 连接数据库
+
+set key value //设置键值
+
+get key //获取键值
+
+keys * // 查询所有键
+
+config set stop-writes-on-bgsave-error no // 进行配置，使得能够删除键值
+
+del key 删除键值
