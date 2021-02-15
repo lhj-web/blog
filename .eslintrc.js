@@ -4,7 +4,7 @@ module.exports = {
     node: true,
     commonjs: true,
   },
-  extends: 'airbnb',
+  extends: ['airbnb'],
   rules: {
     'no-console': 0,
     'no-unused-vars': 0,
