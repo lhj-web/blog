@@ -95,7 +95,7 @@ update users set realname='李四1' where username='lisi';
 
 ### 1.cookie介绍
 
-* cookie是存储在浏览器端的一段字符串（最大5kb）
+* cookie是存储在浏览器端的一段字符串（最大4kb）
 
 * 跨域不共享
 
